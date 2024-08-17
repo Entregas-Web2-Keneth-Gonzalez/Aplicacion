@@ -16,8 +16,8 @@ export class ProductsService {
   getOne(){
 
   }
-  create(){
-
+  create(producto: Productos): Observable<any>{
+    return this.http.post<any>("https://localhost:3000/productos", producto)
   }
   update(){
 

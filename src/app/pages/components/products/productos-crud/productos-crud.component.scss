@@ -1,0 +1,35 @@
+.titlulo{
+    text-align: center;
+}
+
+.button{
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario {
+    max-width: 600px;
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+/* Estilo para cada grupo de campos */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Estilo para las etiquetas */
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}

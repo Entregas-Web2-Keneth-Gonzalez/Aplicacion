@@ -1,0 +1,33 @@
+<div class = "titlulo"><p>{{tittle}}</p></div>
+
+<div class = "formulario">
+    <form [formGroup] = "myForm" (ngSubmit) = "onSubmit()">
+
+        <label for="id">id:</label>
+        <input type="number" id="id" formControlName="id" [disabled]="isRead"> <br>
+    
+        <label for="nombre">nombre:</label>
+        <input type="text" id="nombre" formControlName="nombre" [disabled]="isRead"> <br>
+    
+        <label for="precio">precio:</label>
+        <input type="number" id="precio" formControlName="precio" [disabled]="isRead"> <br>
+    
+        <label for="stock">stock:</label>
+        <input type="number" id="stock" formControlName="stock" [disabled]="isRead"> <br>
+    
+        <!-- <form>
+            <div>
+                <label>estado:</label>
+                <input type="radio" id="estadoYes" formControlName="Estado" value="true" checked>
+                <label for="estadoYes">Sí</label>
+                <input type="radio" id="estadoNo" formControlName="Estado" value="false">
+                <label for="estadoNo">No</label>
+            </div>
+        </form> -->
+    
+        <label for="categoria">categoria:</label>
+        <input type="number" id="categoria" formControlName="categoria" readonly="isRead"> <br>
+    
+        <button class="button" type="submit" [disabled] = "myForm.invalid"  >Submit</button>
+    </form>
+</div>
