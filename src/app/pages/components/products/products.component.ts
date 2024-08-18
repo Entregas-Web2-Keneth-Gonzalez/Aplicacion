@@ -36,14 +36,14 @@ export class ProductsComponent {
     })
   }
 
-  // verDetalle(){
-  //   alert('aqui en el detalle del producto...');
-  // }
-
   openDialog(accion?:number, producto?: Productos){
     const dialogRef = this.dialog.open(ProductosCrudComponent, {
       height: '500px', width: '500px',
       data: {accion, producto},
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.cargarDatos();
     })
   }
 

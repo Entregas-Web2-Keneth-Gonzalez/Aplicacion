@@ -1,4 +1,10 @@
 import {
+  CdkScrollable,
+  ScrollDispatcher,
+  ScrollingModule,
+  ViewportRuler
+} from "./chunk-IHUSEAYO.js";
+import {
   animate,
   animateChild,
   group,
@@ -8,12 +14,6 @@ import {
   transition,
   trigger
 } from "./chunk-NPDSUZTQ.js";
-import {
-  CdkScrollable,
-  ScrollDispatcher,
-  ScrollingModule,
-  ViewportRuler
-} from "./chunk-IHUSEAYO.js";
 import {
   A11yModule,
   BidiModule,

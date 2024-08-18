@@ -22,19 +22,19 @@ export class ProductosCrudComponent {
   isRead = false;
   readonly dialogRef = inject(MatDialogRef<ProductosCrudComponent>);
   readonly data = inject<any>(MAT_DIALOG_DATA);
-  producto:Productos | undefined;
+  producto!:Productos;
   myForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private productosSrv: ProductsService) {
+  constructor(private fb: FormBuilder, private productsSrv: ProductsService) {
     this.myForm = this.fb.group({
       id: ['', Validators.required],
       nombre: ['', Validators.required],
       precio: ['', Validators.required],
       stock: ['', Validators.required],
-      estado: [true, Validators.required],
+      estado: [true],
       categoria: ['', Validators.required],
 
-    })
+    });
   }
 
   ngOnInit(){
@@ -57,16 +57,27 @@ export class ProductosCrudComponent {
   }
 
   onSubmit(){
-
-    if(this.myForm.valid){
-      this.productosSrv.create(this.myForm.value).subscribe((resp) => {
-        alert("Se guardo correctamente");
-      }, (err) => {
-        alert("Error al guardar");
-        console.error(err)
-      })
-    } 
-
+    
+    if(this.accion==1){
+      if(this.myForm.valid){
+        this.productsSrv.create(this.myForm.value).subscribe((resp)=>{
+          alert("Se guardo correctamente");
+        },(err)=>{
+          console.log(err);
+          alert("Error al guardar");
+        })
+      }
+    }
+    else{
+      console.log(this.myForm.value)
+      if(this.myForm.valid){
+        this.productsSrv.update(this.myForm.value).subscribe((resp)=>{
+          alert("Se modificó correctamente");
+        },(err)=>{
+          console.log(err);
+          alert("Error al al modificar");
+        })
+      }
+    }
   }
-
 }

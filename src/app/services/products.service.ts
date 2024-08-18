@@ -17,10 +17,10 @@ export class ProductsService {
 
   }
   create(producto: Productos): Observable<any>{
-    return this.http.post<any>("https://localhost:3000/productos", producto)
+    return this.http.post<any>("http://localhost:3000/productos",producto);
   }
-  update(){
-
+  update(producto: Productos){
+    return this.http.put<any>(`http://localhost:3000/productos/${producto.id}`,producto);
   }
   delete(id:number):Observable<any>{
     return this.http.delete<any>(`http://localhost:3000/productos/${id}`)
